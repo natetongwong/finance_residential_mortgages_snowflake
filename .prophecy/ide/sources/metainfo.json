@@ -1,0 +1,390 @@
+{
+  "name" : "Finance_Residential_Mortgages_SNOW",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "snowflake",
+  "fabricId" : "16184",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "externalSources" : {
+    "type" : "Project",
+    "name" : "",
+    "children" : [ {
+      "type" : "Database",
+      "name" : "AI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ANYA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ASHISH",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BLACKROCK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BOBW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "CHETAN",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "CHIRAG",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_ANALYTICS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_RAW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_X",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_Y",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "FINANCIAL__ECONOMIC_ESSENTIALS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "INTERNATIONAL_SOCCER_RESULTS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP_VLAUNIR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JASVINDER",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JSR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KEERTHI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KISHORE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "LOUIS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MACIEJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MEITEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "NTONG",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "POOJA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "PPIYUSH_TEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_COPILOT",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_DATABASE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_UPLOAD_TABLES",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RAJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RAJAT",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SHASHANK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE_SAMPLE_DATA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TESTING",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TOM",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "UT_DB_DONOT_USE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "VLAUNIR_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "WESTPAC",
+      "children" : [ {
+        "type" : "Schema",
+        "name" : "INFORMATION_SCHEMA",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "PUBLIC",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "RAW",
+        "tables" : {
+          "LOAN_PURPOSE" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_CD",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_PERSONAL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_BUSINESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_LEASES",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "ORIGINATION_SYSTEM" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "PRODUCT_SYSTEM" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "RULE_ID_MAPPING" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RULE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          }
+        }
+      } ]
+    }, {
+      "type" : "Database",
+      "name" : "\"jaffle_shop\"",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "\"qa_database\"",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "\"qa_database_lower_case_only\"",
+      "children" : [ ]
+    } ]
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "prophecyProjectDependencies" : { }
+  },
+  "entitiesToSync" : [ {
+    "name" : "finance_residential_mortgages",
+    "type" : "Model",
+    "syncedOnce" : false
+  } ],
+  "frontEndLanguage" : "sql"
+}

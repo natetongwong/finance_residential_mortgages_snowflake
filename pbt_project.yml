@@ -23,12 +23,236 @@ functions:
   airflowFunctions: {}
   businessRules: {}
 subgraphs: {}
-sqlModels: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/finance_residential_mortgages:
+    name: finance_residential_mortgages
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: PROCESS_DATE
+        dataType:
+          type: Date
+      - name: FROM_DATE
+        dataType:
+          type: Date
+      - name: TO_DATE
+        dataType:
+          type: Date
+      - name: ACCOUNT_ID
+        dataType:
+          type: Number
+      - name: PRODUCT_SYSTEM
+        dataType:
+          type: String
+      - name: PRODUCT_CODE
+        dataType:
+          type: Number
+      - name: GL_ACCOUNT_ID
+        dataType:
+          type: Number
+      - name: LEGAL_ENTITY_ID
+        dataType:
+          type: Number
+      - name: CURRENT_BALANCE
+        dataType:
+          type: Float
+      - name: MATURITY_DATE
+        dataType:
+          type: Date
+      - name: OPENED_DATE
+        dataType:
+          type: Date
+      - name: CURRENCY
+        dataType:
+          type: String
+      - name: ORIGINATION_SYSTEM
+        dataType:
+          type: String
+      - name: PRIM_PURPS_TYPE_LBL
+        dataType:
+          type: String
+      - name: SECND_PURPS_TYPE_LBL
+        dataType:
+          type: Number
+      - name: APPRV_LMT_AMT
+        dataType:
+          type: Float
+      - name: PREDOMINANT_PURPOSE
+        dataType:
+          type: String
+      - name: EFS_HOUSING_PURPOSE
+        dataType:
+          type: String
+      - name: SUB_PURPOSE_HOUSING
+        dataType:
+          type: String
+      - name: EFS_HOUSING_PURPOSE_RULE_ID
+        dataType:
+          type: String
+      - name: RESIDUAL_DAYS
+        dataType:
+          type: Number
+      - name: RESIDUAL_YEARS
+        dataType:
+          type: Number
+      - name: EFS_RESIDUAL_TERM
+        dataType:
+          type: String
+      - name: HOUSING_PURPOSE
+        dataType:
+          type: String
+      - name: EFS_RESIDUAL_TERM_RULE_ID
+        dataType:
+          type: Number
+    description: null
+    author: nathan+westpac@prophecy.io
+    files:
+    - models/finance_residential_mortgages.sql
+    - .prophecy/ide/models/finance_residential_mortgages.json
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2024-08-06 01:56:05'
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros: {}
 sqlSeeds: {}
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/WESTPAC_RAW:
+    name: WESTPAC.RAW
+    description: null
+    author: nathan+westpac@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2024-08-06 01:56:22'
+    tables:
+    - name: RULE_ID_MAPPING
+      schema:
+        providerType: snowflake
+        fields:
+        - name: EFS_HOUSING_PURPOSE
+          dataType:
+            type: String
+        - name: EFS_HOUSING_PURPOSE_RULE_ID
+          dataType:
+            type: String
+        - name: RULE_NAME
+          dataType:
+            type: String
+      description: null
+      author: nathan+westpac@prophecy.io
+      createdAt: '2024-08-06 01:56:22'
+    - name: PRODUCT_SYSTEM
+      schema:
+        providerType: snowflake
+        fields:
+        - name: FROM_DATE
+          dataType:
+            type: Date
+        - name: TO_DATE
+          dataType:
+            type: Date
+        - name: ACCOUNT_ID
+          dataType:
+            type: Number
+        - name: SRC_SYS_CODE
+          dataType:
+            type: String
+        - name: PRODUCT_CODE
+          dataType:
+            type: Number
+        - name: GL_ACCOUNT_ID
+          dataType:
+            type: Number
+        - name: LEGAL_ENTITY_ID
+          dataType:
+            type: Number
+        - name: CURRENT_BALANCE
+          dataType:
+            type: Float
+        - name: MATURITY_DATE
+          dataType:
+            type: Date
+        - name: OPENED_DATE
+          dataType:
+            type: Date
+        - name: CURRENCY
+          dataType:
+            type: String
+      description: null
+      author: nathan+westpac@prophecy.io
+      createdAt: '2024-08-06 01:56:28'
+    - name: ORIGINATION_SYSTEM
+      schema:
+        providerType: snowflake
+        fields:
+        - name: FROM_DATE
+          dataType:
+            type: Date
+        - name: TO_DATE
+          dataType:
+            type: Date
+        - name: APPIN_ID
+          dataType:
+            type: Number
+        - name: SRC_SYS_CD
+          dataType:
+            type: String
+        - name: PRIM_PURPS_TYPE_LBL
+          dataType:
+            type: String
+        - name: SECND_PURPS_TYPE_LBL
+          dataType:
+            type: Number
+        - name: CRNCY_CODE
+          dataType:
+            type: String
+        - name: APPRV_LMT_AMT
+          dataType:
+            type: Float
+        - name: ACCOUNT_ID
+          dataType:
+            type: Number
+      description: null
+      author: nathan+westpac@prophecy.io
+      createdAt: '2024-08-06 01:56:40'
+    - name: LOAN_PURPOSE
+      schema:
+        providerType: snowflake
+        fields:
+        - name: SRC_SYS_CD
+          dataType:
+            type: String
+        - name: SRC_LENDING_PURPOSE_CD
+          dataType:
+            type: Number
+        - name: SRC_LENDING_PURPOSE_DESC
+          dataType:
+            type: String
+        - name: PREDOMINANT_PURPOSE
+          dataType:
+            type: String
+        - name: HOUSING_PURPOSE
+          dataType:
+            type: String
+        - name: SUB_PURPOSE_HOUSING
+          dataType:
+            type: String
+        - name: SUB_PURPOSE_PERSONAL
+          dataType:
+            type: String
+        - name: SUB_PURPOSE_BUSINESS
+          dataType:
+            type: String
+        - name: SUB_PURPOSE_LEASES
+          dataType:
+            type: String
+      description: null
+      author: nathan+westpac@prophecy.io
+      createdAt: '2024-08-06 02:00:23'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline

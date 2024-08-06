@@ -1,0 +1,3506 @@
+{
+  "id" : "finance_residential_mortgages",
+  "metainfo" : {
+    "label" : "finance_residential_mortgages",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "QvrYErSsqkaBkT8X0HqSD$$yL4yskDxGJci9Mn9Msti8" : {
+      "id" : "QvrYErSsqkaBkT8X0HqSD$$yL4yskDxGJci9Mn9Msti8",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "product_system_origination_system_1_RULE_ID_MAPPING",
+        "slug" : "product_system_origination_system_1_RULE_ID_MAPPING",
+        "x" : 560,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Maps product system origination data with corresponding rule IDs for EFS housing purpose.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "RULE_ID_MAPPING",
+          "expression" : {
+            "expression" : "RULE_ID_MAPPING.EFS_HOUSING_PURPOSE = product_system_origination_system_1.EFS_HOUSING_PURPOSE"
+          },
+          "joinType" : "INNER"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CASE\n  WHEN From_Date = last_day(From_Date)\n    THEN From_Date\n  ELSE last_day(dateadd(DAY, -30, From_Date))\nEND"
+          },
+          "alias" : "PROCESS_DATE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.SRC_SYS_CODE"
+          },
+          "alias" : "PRODUCT_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.ORIGINATION_SYSTEM"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.EFS_HOUSING_PURPOSE"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "RULE_ID_MAPPING.EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        }, {
+          "expression" : {
+            "expression" : "product_system_origination_system_1.HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "81fuKWahSxSCcfrl-h6Mt$$XZ17r_Z7zvvYldNOVXrfh##EFS_HOUSING_PURPOSE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##EFS_HOUSING_PURPOSE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##FROM_DATE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##TO_DATE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##ACCOUNT_ID", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##SRC_SYS_CODE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##PRODUCT_CODE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##GL_ACCOUNT_ID", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##LEGAL_ENTITY_ID", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##CURRENT_BALANCE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##MATURITY_DATE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##OPENED_DATE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##CURRENCY", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##ORIGINATION_SYSTEM", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##PRIM_PURPS_TYPE_LBL", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##SECND_PURPS_TYPE_LBL", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##APPRV_LMT_AMT", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##PREDOMINANT_PURPOSE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##EFS_HOUSING_PURPOSE", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##SUB_PURPOSE_HOUSING", "81fuKWahSxSCcfrl-h6Mt$$XZ17r_Z7zvvYldNOVXrfh##EFS_HOUSING_PURPOSE_RULE_ID", "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME##HOUSING_PURPOSE" ],
+        "headAlias" : "product_system_origination_system_1"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FROM_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "product_system_origination_system_1"
+        }, {
+          "id" : "81fuKWahSxSCcfrl-h6Mt$$XZ17r_Z7zvvYldNOVXrfh",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RULE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "RULE_ID_MAPPING"
+        } ],
+        "outputs" : [ {
+          "id" : "Gz-bKktNlU22DCGFnnMd6$$VYM_0IBVMfzykjRc2SsuE",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "b59K_mXFGR1MT7Hb_Vrrh" : {
+      "id" : "b59K_mXFGR1MT7Hb_Vrrh",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ORIGINATION_SYSTEM",
+        "slug" : "ORIGINATION_SYSTEM",
+        "x" : -400,
+        "y" : -120,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "ORIGINATION_SYSTEM",
+          "sourceType" : "Source",
+          "sourceName" : "WESTPAC.RAW",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ofa29JSlU4t5NgO9Ft03b",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "DbJWJcxRLexSjPd9_kR5u$$LLagc8XMfj9XfsBh8TAhB" : {
+      "id" : "DbJWJcxRLexSjPd9_kR5u$$LLagc8XMfj9XfsBh8TAhB",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_3",
+        "slug" : "Reformat_3",
+        "x" : 1000,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Reformats and extracts relevant information from the input dataset, including various account details and calculated residual term rule.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##PROCESS_DATE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##FROM_DATE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##TO_DATE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##ACCOUNT_ID", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##PRODUCT_SYSTEM", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##PRODUCT_CODE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##GL_ACCOUNT_ID", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##LEGAL_ENTITY_ID", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##CURRENT_BALANCE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##MATURITY_DATE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##OPENED_DATE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##CURRENCY", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##ORIGINATION_SYSTEM", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##PRIM_PURPS_TYPE_LBL", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##SECND_PURPS_TYPE_LBL", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##APPRV_LMT_AMT", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##PREDOMINANT_PURPOSE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##EFS_HOUSING_PURPOSE", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##SUB_PURPOSE_HOUSING", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##EFS_HOUSING_PURPOSE_RULE_ID", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##RESIDUAL_DAYS", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##RESIDUAL_YEARS", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##EFS_RESIDUAL_TERM", "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil##HOUSING_PURPOSE" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "PROCESS_DATE"
+          },
+          "alias" : "PROCESS_DATE"
+        }, {
+          "expression" : {
+            "expression" : "FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM"
+          },
+          "alias" : "PRODUCT_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        }, {
+          "expression" : {
+            "expression" : "RESIDUAL_DAYS"
+          },
+          "alias" : "RESIDUAL_DAYS"
+        }, {
+          "expression" : {
+            "expression" : "RESIDUAL_YEARS"
+          },
+          "alias" : "RESIDUAL_YEARS"
+        }, {
+          "expression" : {
+            "expression" : "EFS_RESIDUAL_TERM"
+          },
+          "alias" : "EFS_RESIDUAL_TERM"
+        }, {
+          "expression" : {
+            "expression" : "HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN RESIDUAL_YEARS > 0 AND RESIDUAL_YEARS <= 1\n    THEN 5\n  WHEN RESIDUAL_YEARS > 1\n    THEN 6\n  WHEN MATURITY_DATE IS NULL\n    THEN 7\n  ELSE NULL\nEND"
+          },
+          "alias" : "EFS_RESIDUAL_TERM_RULE_ID"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "MzbZygpUrsE14zB7oLquk$$1lryNU5hIDxRiKB6Og_J1",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "jH79ewWZmGrHYIZPI6U0j" : {
+      "id" : "jH79ewWZmGrHYIZPI6U0j",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "RULE_ID_MAPPING",
+        "slug" : "RULE_ID_MAPPING",
+        "x" : 400,
+        "y" : 20,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "RULE_ID_MAPPING",
+          "sourceType" : "Source",
+          "sourceName" : "WESTPAC.RAW",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "HcLGNysVF4j_rHdXuJJiE",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RULE_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "KR5craaEvP5-Nj_FviMg4$$pckHvmAor5AM6-JR68P1q" : {
+      "id" : "KR5craaEvP5-Nj_FviMg4$$pckHvmAor5AM6-JR68P1q",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 720,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Reformats and extracts relevant information from the product system origination system mapping table.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##PROCESS_DATE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##FROM_DATE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##TO_DATE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##ACCOUNT_ID", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##PRODUCT_SYSTEM", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##PRODUCT_CODE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##GL_ACCOUNT_ID", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##LEGAL_ENTITY_ID", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##CURRENT_BALANCE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##MATURITY_DATE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##OPENED_DATE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##CURRENCY", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##ORIGINATION_SYSTEM", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##PRIM_PURPS_TYPE_LBL", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##SECND_PURPS_TYPE_LBL", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##APPRV_LMT_AMT", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##PREDOMINANT_PURPOSE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##EFS_HOUSING_PURPOSE", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##SUB_PURPOSE_HOUSING", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##EFS_HOUSING_PURPOSE_RULE_ID", "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz##HOUSING_PURPOSE" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "PROCESS_DATE"
+          },
+          "alias" : "PROCESS_DATE"
+        }, {
+          "expression" : {
+            "expression" : "FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM"
+          },
+          "alias" : "PRODUCT_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        }, {
+          "expression" : {
+            "expression" : "DATEDIFF(DAY, PROCESS_DATE, MATURITY_DATE)"
+          },
+          "alias" : "RESIDUAL_DAYS"
+        }, {
+          "expression" : {
+            "expression" : "DATEDIFF(DAY, PROCESS_DATE, MATURITY_DATE)/365"
+          },
+          "alias" : "RESIDUAL_YEARS"
+        }, {
+          "expression" : {
+            "expression" : "HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "product_system_origination_system_1_RULE_ID_MAPPING"
+        } ],
+        "outputs" : [ {
+          "id" : "K4dpco_TtbNEjq8UNP15a$$SbfjGfkJfTj80R_jCEPwk",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "64Y0ZCCz9xcl-LzifORd0$$yd9n6VCMAf8v60_MMc3o9" : {
+      "id" : "64Y0ZCCz9xcl-LzifORd0$$yd9n6VCMAf8v60_MMc3o9",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Add_EFS_Housing_Purpose_Rule",
+        "slug" : "Add_EFS_Housing_Purpose_Rule",
+        "x" : 380,
+        "y" : -140,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Reformats and extracts relevant information from the product system origination system.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##FROM_DATE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##TO_DATE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##ACCOUNT_ID", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##SRC_SYS_CODE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##PRODUCT_CODE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##GL_ACCOUNT_ID", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##LEGAL_ENTITY_ID", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##CURRENT_BALANCE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##MATURITY_DATE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##OPENED_DATE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##CURRENCY", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##FROM_DATE2", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##TO_DATE2", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##APPIN_ID", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##ORIGINATION_SYSTEM", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##PRIM_PURPS_TYPE_LBL", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##SECND_PURPS_TYPE_LBL", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##CRNCY_CODE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##APPRV_LMT_AMT", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##PREDOMINANT_PURPOSE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##HOUSING_PURPOSE", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##SUB_PURPOSE_HOUSING", "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x##EFS_HOUSING_PURPOSE_RULE_ID" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "SRC_SYS_CODE"
+          },
+          "alias" : "SRC_SYS_CODE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "FROM_DATE2"
+          },
+          "alias" : "FROM_DATE2"
+        }, {
+          "expression" : {
+            "expression" : "TO_DATE2"
+          },
+          "alias" : "TO_DATE2"
+        }, {
+          "expression" : {
+            "expression" : "APPIN_ID"
+          },
+          "alias" : "APPIN_ID"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "CRNCY_CODE"
+          },
+          "alias" : "CRNCY_CODE"
+        }, {
+          "expression" : {
+            "expression" : "APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN SECND_PURPS_TYPE_LBL = '231' AND ORIGINATION_SYSTEM = 'MP-001' AND HOUSING_PURPOSE = 'OO'\n    THEN 'IPL'\n  ELSE HOUSING_PURPOSE\nEND"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FROM_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "wRWT9EfbHZVN31Tsz2ZUB$$y7NUZ5STk-7Ta1jPbEiHY",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FROM_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "YE6CTg-AeNFVi6rtM98Dj$$cHapJXiPduedqB_kZnfCr" : {
+      "id" : "YE6CTg-AeNFVi6rtM98Dj$$cHapJXiPduedqB_kZnfCr",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "join_origination_loan_purpose",
+        "slug" : "join_origination_loan_purpose",
+        "x" : 0,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Combines origination system data with loan purpose details based on matching source system code and secondary purpose label.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "expression" : "in0.SRC_SYS_CD = in1.SRC_SYS_CD and in0.SECND_PURPS_TYPE_LBL = in1.\" Secnd_Purps_Type_Lbl\""
+          },
+          "joinType" : ""
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "in0.FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "in0.TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "in0.APPIN_ID"
+          },
+          "alias" : "APPIN_ID"
+        }, {
+          "expression" : {
+            "expression" : "in0.SRC_SYS_CD"
+          },
+          "alias" : "SRC_SYS_CD"
+        }, {
+          "expression" : {
+            "expression" : "in0.PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "in0.SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "in0.CRNCY_CODE"
+          },
+          "alias" : "CRNCY_CODE"
+        }, {
+          "expression" : {
+            "expression" : "in0.APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "in0.ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "in1.PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "in1.HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "in1.SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "in1.EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##FROM_DATE", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##TO_DATE", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##APPIN_ID", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##SRC_SYS_CD", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##PRIM_PURPS_TYPE_LBL", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##SECND_PURPS_TYPE_LBL", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##CRNCY_CODE", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##APPRV_LMT_AMT", "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h##ACCOUNT_ID", "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze##PREDOMINANT_PURPOSE", "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze##HOUSING_PURPOSE", "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze##SUB_PURPOSE_HOUSING", "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze##EFS_HOUSING_PURPOSE_RULE_ID" ],
+        "headAlias" : "in0"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        }, {
+          "id" : "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : " Secnd_Purps_Type_Lbl",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_PERSONAL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_BUSINESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_LEASES",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "-TMFuHSp2of6jybkGXlkf$$woBDGTCVa7VP6TNBVkzvS",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "rmoA5Isw1N2kXG5eopH5T$$MG7mYVX20jIyqHF0aT0u2" : {
+      "id" : "rmoA5Isw1N2kXG5eopH5T$$MG7mYVX20jIyqHF0aT0u2",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "loan_purpose_details",
+        "slug" : "loan_purpose_details",
+        "x" : -200,
+        "y" : 60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Extracts loan purpose details including lending purpose codes, descriptions, predominant purpose, and sub-purposes for housing, personal, business, and leases.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SRC_SYS_CD", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SRC_LENDING_PURPOSE_CD", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SRC_LENDING_PURPOSE_DESC", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##PREDOMINANT_PURPOSE", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##HOUSING_PURPOSE", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SUB_PURPOSE_HOUSING", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SUB_PURPOSE_PERSONAL", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SUB_PURPOSE_BUSINESS", "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O##SUB_PURPOSE_LEASES" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "SRC_SYS_CD"
+          },
+          "alias" : "SRC_SYS_CD"
+        }, {
+          "expression" : {
+            "expression" : "SRC_LENDING_PURPOSE_CD"
+          },
+          "alias" : "\" Secnd_Purps_Type_Lbl\""
+        }, {
+          "expression" : {
+            "expression" : "SRC_LENDING_PURPOSE_DESC"
+          },
+          "alias" : "SRC_LENDING_PURPOSE_DESC"
+        }, {
+          "expression" : {
+            "expression" : "PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_PERSONAL"
+          },
+          "alias" : "SUB_PURPOSE_PERSONAL"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_BUSINESS"
+          },
+          "alias" : "SUB_PURPOSE_BUSINESS"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_LEASES"
+          },
+          "alias" : "SUB_PURPOSE_LEASES"
+        }, {
+          "expression" : {
+            "expression" : "1"
+          },
+          "alias" : "EFS_Housing_purpose_Rule_ID"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_CD",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_PERSONAL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_BUSINESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_LEASES",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "LOAN_PURPOSE"
+        } ],
+        "outputs" : [ {
+          "id" : "F63CQlpo3Drz2u-mgJArH$$tHoOdB7y7dD-C2t5xJt_O",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : " Secnd_Purps_Type_Lbl",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_PERSONAL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_BUSINESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_LEASES",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "EmFPck6kLzbl8WIaUgwRE$$ANPbAxd3c0HBWixelKa75" : {
+      "id" : "EmFPck6kLzbl8WIaUgwRE$$ANPbAxd3c0HBWixelKa75",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_2",
+        "slug" : "Reformat_2",
+        "x" : 860,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Reformats and extracts relevant information from a dataset containing account details, including balance, maturity date, currency, and purpose.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##PROCESS_DATE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##FROM_DATE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##TO_DATE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##ACCOUNT_ID", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##PRODUCT_SYSTEM", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##PRODUCT_CODE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##GL_ACCOUNT_ID", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##LEGAL_ENTITY_ID", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##CURRENT_BALANCE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##MATURITY_DATE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##OPENED_DATE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##CURRENCY", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##ORIGINATION_SYSTEM", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##PRIM_PURPS_TYPE_LBL", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##SECND_PURPS_TYPE_LBL", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##APPRV_LMT_AMT", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##PREDOMINANT_PURPOSE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##EFS_HOUSING_PURPOSE", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##SUB_PURPOSE_HOUSING", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##EFS_HOUSING_PURPOSE_RULE_ID", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##RESIDUAL_DAYS", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##RESIDUAL_YEARS", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##Residual_years", "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx##HOUSING_PURPOSE" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "PROCESS_DATE"
+          },
+          "alias" : "PROCESS_DATE"
+        }, {
+          "expression" : {
+            "expression" : "FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM"
+          },
+          "alias" : "PRODUCT_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        }, {
+          "expression" : {
+            "expression" : "RESIDUAL_DAYS"
+          },
+          "alias" : "RESIDUAL_DAYS"
+        }, {
+          "expression" : {
+            "expression" : "RESIDUAL_YEARS"
+          },
+          "alias" : "RESIDUAL_YEARS"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN Residual_years > 0 and Residual_years < 1\n    THEN 'Short Term'\n  WHEN Residual_years > 1\n    THEN 'Long Term'\n  ELSE 'Long Term'\nEND"
+          },
+          "alias" : "EFS_RESIDUAL_TERM"
+        }, {
+          "expression" : {
+            "expression" : "HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "6WE0uBR2y-mZzXqYtPw8v$$2asmhySqI4Lq-PZBORiml",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "SBmvsvw2BxqdOWUcztGAL" : {
+      "id" : "SBmvsvw2BxqdOWUcztGAL",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "LOAN_PURPOSE",
+        "slug" : "LOAN_PURPOSE",
+        "x" : -400,
+        "y" : 60,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "LOAN_PURPOSE",
+          "sourceType" : "Source",
+          "sourceName" : "WESTPAC.RAW",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "fyd0eg2gwH2umUkYajPSm",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_CD",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_LENDING_PURPOSE_DESC",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_PERSONAL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_BUSINESS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_LEASES",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sxoVtJviVhNDI4d2L-Zr5" : {
+      "id" : "sxoVtJviVhNDI4d2L-Zr5",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "PRODUCT_SYSTEM",
+        "slug" : "PRODUCT_SYSTEM",
+        "x" : -400,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "PRODUCT_SYSTEM",
+          "sourceType" : "Source",
+          "sourceName" : "WESTPAC.RAW",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "dM5yMxLgXjJvIuHNZAQ50",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "hXIQqwz3gJ4A6vrxV6XsK$$qOHlqaL6bggbT0U4mcEdw" : {
+      "id" : "hXIQqwz3gJ4A6vrxV6XsK$$qOHlqaL6bggbT0U4mcEdw",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "PRODUCT_SYSTEM_ORIGINATION_SYSTEM",
+        "slug" : "PRODUCT_SYSTEM_ORIGINATION_SYSTEM",
+        "x" : 220,
+        "y" : -140,
+        "phase" : 0,
+        "macroDependencies" : [ ],
+        "comment" : "Combines product system information with origination system details for analysis and comparison.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "ORIGINATION_SYSTEM",
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.ACCOUNT_ID = ORIGINATION_SYSTEM.ACCOUNT_ID"
+          },
+          "joinType" : "inner"
+        } ],
+        "allowSelection" : false,
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.FROM_DATE"
+          },
+          "alias" : "FROM_DATE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.TO_DATE"
+          },
+          "alias" : "TO_DATE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.ACCOUNT_ID"
+          },
+          "alias" : "ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.SRC_SYS_CODE"
+          },
+          "alias" : "SRC_SYS_CODE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.PRODUCT_CODE"
+          },
+          "alias" : "PRODUCT_CODE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.GL_ACCOUNT_ID"
+          },
+          "alias" : "GL_ACCOUNT_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.LEGAL_ENTITY_ID"
+          },
+          "alias" : "LEGAL_ENTITY_ID"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.CURRENT_BALANCE"
+          },
+          "alias" : "CURRENT_BALANCE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.MATURITY_DATE"
+          },
+          "alias" : "MATURITY_DATE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.OPENED_DATE"
+          },
+          "alias" : "OPENED_DATE"
+        }, {
+          "expression" : {
+            "expression" : "PRODUCT_SYSTEM.CURRENCY"
+          },
+          "alias" : "CURRENCY"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.FROM_DATE"
+          },
+          "alias" : "FROM_DATE2"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.TO_DATE"
+          },
+          "alias" : "TO_DATE2"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.APPIN_ID"
+          },
+          "alias" : "APPIN_ID"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.SRC_SYS_CD"
+          },
+          "alias" : "ORIGINATION_SYSTEM"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.PRIM_PURPS_TYPE_LBL"
+          },
+          "alias" : "PRIM_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.SECND_PURPS_TYPE_LBL"
+          },
+          "alias" : "SECND_PURPS_TYPE_LBL"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.CRNCY_CODE"
+          },
+          "alias" : "CRNCY_CODE"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.APPRV_LMT_AMT"
+          },
+          "alias" : "APPRV_LMT_AMT"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.PREDOMINANT_PURPOSE"
+          },
+          "alias" : "PREDOMINANT_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.HOUSING_PURPOSE"
+          },
+          "alias" : "HOUSING_PURPOSE"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.SUB_PURPOSE_HOUSING"
+          },
+          "alias" : "SUB_PURPOSE_HOUSING"
+        }, {
+          "expression" : {
+            "expression" : "ORIGINATION_SYSTEM.EFS_HOUSING_PURPOSE_RULE_ID"
+          },
+          "alias" : "EFS_HOUSING_PURPOSE_RULE_ID"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##ACCOUNT_ID", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##ACCOUNT_ID", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##FROM_DATE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##TO_DATE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##ACCOUNT_ID", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##SRC_SYS_CODE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##PRODUCT_CODE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##GL_ACCOUNT_ID", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##LEGAL_ENTITY_ID", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##CURRENT_BALANCE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##MATURITY_DATE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##OPENED_DATE", "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz##CURRENCY", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##FROM_DATE", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##TO_DATE", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##APPIN_ID", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##SRC_SYS_CD", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##PRIM_PURPS_TYPE_LBL", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##SECND_PURPS_TYPE_LBL", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##CRNCY_CODE", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##APPRV_LMT_AMT", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##PREDOMINANT_PURPOSE", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##HOUSING_PURPOSE", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##SUB_PURPOSE_HOUSING", "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_##EFS_HOUSING_PURPOSE_RULE_ID" ],
+        "headAlias" : "PRODUCT_SYSTEM"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz",
+          "schema" : {
+            "providerType" : "snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "PRODUCT_SYSTEM"
+        }, {
+          "id" : "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "ORIGINATION_SYSTEM"
+        } ],
+        "outputs" : [ {
+          "id" : "pcerU817YJgb5k4O1rV9_$$_iIdtwmzB2cai2FQ11sDt",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "SRC_SYS_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FROM_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE2",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "APPIN_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CRNCY_CODE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "finance_residential_mortgages##jA1FgpfF" : {
+      "id" : "finance_residential_mortgages##jA1FgpfF",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "finance_residential_mortgages",
+        "x" : 1160,
+        "y" : -60,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_3\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XkOxxL52",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "Reformat_3"
+        } ],
+        "outputs" : [ {
+          "id" : "adlkyYlK",
+          "schema" : {
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PROCESS_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "FROM_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "TO_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PRODUCT_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRODUCT_CODE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GL_ACCOUNT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "LEGAL_ENTITY_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CURRENT_BALANCE",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "MATURITY_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "OPENED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "CURRENCY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "ORIGINATION_SYSTEM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "PRIM_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SECND_PURPS_TYPE_LBL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "APPRV_LMT_AMT",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "PREDOMINANT_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "SUB_PURPOSE_HOUSING",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_HOUSING_PURPOSE_RULE_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "RESIDUAL_DAYS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "RESIDUAL_YEARS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "HOUSING_PURPOSE",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EFS_RESIDUAL_TERM_RULE_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "2ND89Txk7m95m2RAv1jj7$$og2_n8_AcM37a-rNd_tqa",
+    "source" : "sxoVtJviVhNDI4d2L-Zr5",
+    "sourcePort" : "dM5yMxLgXjJvIuHNZAQ50",
+    "target" : "hXIQqwz3gJ4A6vrxV6XsK$$qOHlqaL6bggbT0U4mcEdw",
+    "targetPort" : "n_D5lti_EFUF8scMgk4-d$$Z98MSzkY3qVJkGFmAIpoz"
+  }, {
+    "id" : "gj6JkZ2qnmNfUO1Uuvyfo",
+    "source" : "b59K_mXFGR1MT7Hb_Vrrh",
+    "sourcePort" : "ofa29JSlU4t5NgO9Ft03b",
+    "target" : "YE6CTg-AeNFVi6rtM98Dj$$cHapJXiPduedqB_kZnfCr",
+    "targetPort" : "WaX3_ijq6cSmpvN9dQNAS$$XSYHxWk0YDzd4VKNvJ5_h"
+  }, {
+    "id" : "o8eHpnVucj93YBQrYiusQ$$iuzZ0L4zxe-m7kT4BgenS",
+    "source" : "SBmvsvw2BxqdOWUcztGAL",
+    "sourcePort" : "fyd0eg2gwH2umUkYajPSm",
+    "target" : "rmoA5Isw1N2kXG5eopH5T$$MG7mYVX20jIyqHF0aT0u2",
+    "targetPort" : "Ph0sCBPzQvY1McVqm2ntl$$MixAakqE-z_7vX_ENY48O"
+  }, {
+    "id" : "SdbHCgdIedATcvjPFZPKe",
+    "source" : "rmoA5Isw1N2kXG5eopH5T$$MG7mYVX20jIyqHF0aT0u2",
+    "sourcePort" : "F63CQlpo3Drz2u-mgJArH$$tHoOdB7y7dD-C2t5xJt_O",
+    "target" : "YE6CTg-AeNFVi6rtM98Dj$$cHapJXiPduedqB_kZnfCr",
+    "targetPort" : "FOra8oJIS_NpRx-pL0NqM$$B5aopW0cyXWQYVLul63Ze"
+  }, {
+    "id" : "co3iJi2gVsvtEljPApbqd",
+    "source" : "YE6CTg-AeNFVi6rtM98Dj$$cHapJXiPduedqB_kZnfCr",
+    "sourcePort" : "-TMFuHSp2of6jybkGXlkf$$woBDGTCVa7VP6TNBVkzvS",
+    "target" : "hXIQqwz3gJ4A6vrxV6XsK$$qOHlqaL6bggbT0U4mcEdw",
+    "targetPort" : "SgWGA16-t4DhtqhDReAOE$$0EuInJ2GEaV8CMScvrdo_"
+  }, {
+    "id" : "h53ZlsIA2iSI9UUJhD2UX$$wVIo9Nf-Eks45Q8TA8Efp",
+    "source" : "jH79ewWZmGrHYIZPI6U0j",
+    "sourcePort" : "HcLGNysVF4j_rHdXuJJiE",
+    "target" : "QvrYErSsqkaBkT8X0HqSD$$yL4yskDxGJci9Mn9Msti8",
+    "targetPort" : "81fuKWahSxSCcfrl-h6Mt$$XZ17r_Z7zvvYldNOVXrfh"
+  }, {
+    "id" : "uHxeFR0-HU5gyAFydMbr9$$CZ1sU48WGZiIPuCbYxjdL",
+    "source" : "hXIQqwz3gJ4A6vrxV6XsK$$qOHlqaL6bggbT0U4mcEdw",
+    "sourcePort" : "pcerU817YJgb5k4O1rV9_$$_iIdtwmzB2cai2FQ11sDt",
+    "target" : "64Y0ZCCz9xcl-LzifORd0$$yd9n6VCMAf8v60_MMc3o9",
+    "targetPort" : "U2zhmGqMzceF0OaCtz1Ni$$sLLjMZx2_tS1Wf4rNYg5x"
+  }, {
+    "id" : "2nlCyalpsvJwI5eAPDeOl$$Z_s29Us8bHh6nHJRG5Trs",
+    "source" : "64Y0ZCCz9xcl-LzifORd0$$yd9n6VCMAf8v60_MMc3o9",
+    "sourcePort" : "wRWT9EfbHZVN31Tsz2ZUB$$y7NUZ5STk-7Ta1jPbEiHY",
+    "target" : "QvrYErSsqkaBkT8X0HqSD$$yL4yskDxGJci9Mn9Msti8",
+    "targetPort" : "dtPoiJj4-ssj9BudmI-Rv$$XfByLH418HRogJ_0JdiME"
+  }, {
+    "id" : "ULs2dWehoKQ8U6yOwUpY2$$auutW02rrbA5BNoZqhwzw",
+    "source" : "QvrYErSsqkaBkT8X0HqSD$$yL4yskDxGJci9Mn9Msti8",
+    "sourcePort" : "Gz-bKktNlU22DCGFnnMd6$$VYM_0IBVMfzykjRc2SsuE",
+    "target" : "KR5craaEvP5-Nj_FviMg4$$pckHvmAor5AM6-JR68P1q",
+    "targetPort" : "AhqgDe0edG7eqqJUrfhDo$$mEakb4g2T8NIjTBbr24rz"
+  }, {
+    "id" : "l8bxAE_Z6X-eEUykrAy77$$RWswyrh8Oz4t7W9I0-6eB",
+    "source" : "KR5craaEvP5-Nj_FviMg4$$pckHvmAor5AM6-JR68P1q",
+    "sourcePort" : "K4dpco_TtbNEjq8UNP15a$$SbfjGfkJfTj80R_jCEPwk",
+    "target" : "EmFPck6kLzbl8WIaUgwRE$$ANPbAxd3c0HBWixelKa75",
+    "targetPort" : "hHHKhkNkxoqrrtbmC31Q8$$oPXo0DWLwgi-HXoZiCBzx"
+  }, {
+    "id" : "ct-MqKJhZQlksO9IPgjAj$$_JOb8v8QM9jPyPZh6WOgr",
+    "source" : "DbJWJcxRLexSjPd9_kR5u$$LLagc8XMfj9XfsBh8TAhB",
+    "sourcePort" : "MzbZygpUrsE14zB7oLquk$$1lryNU5hIDxRiKB6Og_J1",
+    "target" : "finance_residential_mortgages##jA1FgpfF",
+    "targetPort" : "XkOxxL52"
+  }, {
+    "id" : "FoQJ2RTD17spbB3D9pn2E$$vxL9VdWNkDVtDd1Gcx__E",
+    "source" : "EmFPck6kLzbl8WIaUgwRE$$ANPbAxd3c0HBWixelKa75",
+    "sourcePort" : "6WE0uBR2y-mZzXqYtPw8v$$2asmhySqI4Lq-PZBORiml",
+    "target" : "DbJWJcxRLexSjPd9_kR5u$$LLagc8XMfj9XfsBh8TAhB",
+    "targetPort" : "tTLfUtlQ8oFU2U_AsyWJ9$$V2cc9VGNksNIEE_Uz5Nil"
+  } ],
+  "component" : "Model"
+}
