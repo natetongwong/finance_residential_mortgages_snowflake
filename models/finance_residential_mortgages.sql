@@ -251,9 +251,9 @@ Reformat_2 AS (
 
 ),
 
-Reformat_3 AS (
+Add_EFS_RESIDUAL_TERM_RULE_ID AS (
 
-  {#Reformats and extracts relevant information from the input dataset, including various account details and calculated residual term rule.#}
+  {#Derives a rule ID based on residual term and other loan attributes for housing purposes.#}
   SELECT 
     PROCESS_DATE AS PROCESS_DATE,
     FROM_DATE AS FROM_DATE,
@@ -295,4 +295,4 @@ Reformat_3 AS (
 
 SELECT *
 
-FROM Reformat_3
+FROM Add_EFS_RESIDUAL_TERM_RULE_ID

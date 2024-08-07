@@ -16,8 +16,8 @@
       "metadata" : {
         "label" : "product_system_origination_system_1_RULE_ID_MAPPING",
         "slug" : "product_system_origination_system_1_RULE_ID_MAPPING",
-        "x" : 560,
-        "y" : -60,
+        "x" : 1020,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Maps product system origination data with corresponding rule IDs for EFS housing purpose.",
@@ -416,8 +416,8 @@
       "metadata" : {
         "label" : "ORIGINATION_SYSTEM",
         "slug" : "ORIGINATION_SYSTEM",
-        "x" : -400,
-        "y" : -120,
+        "x" : 20,
+        "y" : 120,
         "phase" : 0
       },
       "properties" : {
@@ -492,13 +492,13 @@
       "id" : "DbJWJcxRLexSjPd9_kR5u$$LLagc8XMfj9XfsBh8TAhB",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "Reformat_3",
-        "slug" : "Reformat_3",
-        "x" : 1000,
-        "y" : -60,
+        "label" : "Add_EFS_RESIDUAL_TERM_RULE_ID",
+        "slug" : "Add_EFS_RESIDUAL_TERM_RULE_ID",
+        "x" : 1620,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
-        "comment" : "Reformats and extracts relevant information from the input dataset, including various account details and calculated residual term rule.",
+        "comment" : "Derives a rule ID based on residual term and other loan attributes for housing purposes.",
         "autoUpdateComment" : true
       },
       "properties" : {
@@ -902,8 +902,8 @@
       "metadata" : {
         "label" : "RULE_ID_MAPPING",
         "slug" : "RULE_ID_MAPPING",
-        "x" : 400,
-        "y" : 20,
+        "x" : 820,
+        "y" : 320,
         "phase" : 0
       },
       "properties" : {
@@ -950,8 +950,8 @@
       "metadata" : {
         "label" : "Reformat_1",
         "slug" : "Reformat_1",
-        "x" : 720,
-        "y" : -60,
+        "x" : 1220,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Reformats and extracts relevant information from the product system origination system mapping table.",
@@ -1323,8 +1323,8 @@
       "metadata" : {
         "label" : "Add_EFS_Housing_Purpose_Rule",
         "slug" : "Add_EFS_Housing_Purpose_Rule",
-        "x" : 380,
-        "y" : -140,
+        "x" : 820,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Reformats and extracts relevant information from the product system origination system.",
@@ -1716,8 +1716,8 @@
       "metadata" : {
         "label" : "join_origination_loan_purpose",
         "slug" : "join_origination_loan_purpose",
-        "x" : 0,
-        "y" : -60,
+        "x" : 420,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines origination system data with loan purpose details based on matching source system code and secondary purpose label.",
@@ -1996,8 +1996,8 @@
       "metadata" : {
         "label" : "loan_purpose_details",
         "slug" : "loan_purpose_details",
-        "x" : -200,
-        "y" : 60,
+        "x" : 220,
+        "y" : 320,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Extracts loan purpose details including lending purpose codes, descriptions, predominant purpose, and sub-purposes for housing, personal, business, and leases.",
@@ -2179,8 +2179,8 @@
       "metadata" : {
         "label" : "Reformat_2",
         "slug" : "Reformat_2",
-        "x" : 860,
-        "y" : -60,
+        "x" : 1420,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Reformats and extracts relevant information from a dataset containing account details, including balance, maturity date, currency, and purpose.",
@@ -2572,8 +2572,8 @@
       "metadata" : {
         "label" : "LOAN_PURPOSE",
         "slug" : "LOAN_PURPOSE",
-        "x" : -400,
-        "y" : 60,
+        "x" : 20,
+        "y" : 320,
         "phase" : 0
       },
       "properties" : {
@@ -2650,8 +2650,8 @@
       "metadata" : {
         "label" : "PRODUCT_SYSTEM",
         "slug" : "PRODUCT_SYSTEM",
-        "x" : -400,
-        "y" : -300,
+        "x" : 420,
+        "y" : 20,
         "phase" : 0
       },
       "properties" : {
@@ -2738,8 +2738,8 @@
       "metadata" : {
         "label" : "PRODUCT_SYSTEM_ORIGINATION_SYSTEM",
         "slug" : "PRODUCT_SYSTEM_ORIGINATION_SYSTEM",
-        "x" : 220,
-        "y" : -140,
+        "x" : 620,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ],
         "comment" : "Combines product system information with origination system details for analysis and comparison.",
@@ -3142,8 +3142,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "finance_residential_mortgages",
-        "x" : 1160,
-        "y" : -60,
+        "x" : 1820,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -3151,7 +3151,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Reformat_3\n",
+        "query" : "SELECT * \n\nFROM Add_EFS_RESIDUAL_TERM_RULE_ID\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -3289,7 +3289,7 @@
               }
             } ]
           },
-          "slug" : "Reformat_3"
+          "slug" : "Add_EFS_RESIDUAL_TERM_RULE_ID"
         } ],
         "outputs" : [ {
           "id" : "adlkyYlK",
